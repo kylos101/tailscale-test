@@ -8,4 +8,6 @@ multipass launch -n database --cloud-init my-config.yaml
 echo "Start tailscale: 'sudo tailscale up' once you're in the VM."
 echo "Check on the IP binding: 'sudo ss -tap | grep postgresql' once you're in the VM."
 echo "Check the tailscale: 'tailscale status'."
+echo "Check postgresql port binding: 'ping your-gitpod-workspace'."
+echo "Check postgresql port binding: 'netcat localhost 5432 -v'."
 multipass shell database
