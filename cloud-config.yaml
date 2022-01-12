@@ -1,0 +1,14 @@
+#cloud-config
+users:
+  - name: database
+    # don't commit me if I have a value...
+    ssh-authorized-keys:
+      - foo
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+runcmd:
+  - sudo apt-get -y install postgresql
+  - sudo sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '0.0.0.0'/g" /etc/postgresql/12/main/postgresql.conf
+  - sudo service postgresql restart
+  - curl -fsSL https://tailscale.com/install.sh | sh
