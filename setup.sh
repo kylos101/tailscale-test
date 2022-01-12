@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # sorry...
 snap install multipass
 # get yq

@@ -1,4 +1,5 @@
 #!/bin/sh
+
 touch my-config.yaml
 cat cloud-config.yaml | PUBKEY=$(cat ~/.ssh/id_rsa.pub) \
 yq eval '.users[].ssh-authorized-keys = strenv(PUBKEY)' - > my-config.yaml
