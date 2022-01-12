@@ -1,10 +1,10 @@
-## Connect this workspace to tailscale
+## Connect this workspace to tailscale (the client)
 
 Assuming you've logged into tailscale with your Github account.
 
 Run `sudo tailscale up`.
 
-## On a local machine, using multipass
+## On a local machine, using multipass (the server)
 
 Generate a rsa key pair, if you haven't already, `ssh-keygen`.
 
