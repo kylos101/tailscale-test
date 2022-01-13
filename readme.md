@@ -94,7 +94,7 @@ Connection to 100.106.9.63 5432 port [tcp/postgresql] succeeded!
 
 ## Interesting
 
-This part is interesting, we're making the UDP connection to Tailscale, but we're not getting a response with data.
+This part is interesting, we're making the UDP connection to Tailscale magic DNS, but the response we're getting doesn't match what the VM was getting.
 
 ```shell
 gitpod /workspace/tailscale-test $ netcat -u 100.100.100.100 53 -v
