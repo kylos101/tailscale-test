@@ -18,6 +18,8 @@ Assuming you're now in a Gitpod workspace:
 
 ## Testing
 
+[These services were visible to the Tailescale network at the time of testing.](https://github.com/kylos101/tailscale-test/issues/1)
+
 ### Validate the VM server
 
 ```shell
@@ -88,4 +90,23 @@ PING 100.100.100.100 (100.100.100.100) 56(84) bytes of data.
 
 gitpod /workspace/tailscale-test $ netcat 100.106.9.63 5432 -v
 Connection to 100.106.9.63 5432 port [tcp/postgresql] succeeded!
+```
+
+## Interesting
+
+This part is interesting, we're making the UDP connection to Tailscale, but we're not getting a response with data.
+
+```shell
+gitpod /workspace/tailscale-test $ netcat -u 100.100.100.100 53 -v
+Connection to 100.100.100.100 53 port [udp/domain] succeeded!
+�����^C
+```
+
+tailscaled logs the following:
+
+```
+logtail: dialed "log.tailscale.io:443" in 22ms
+dns: resolver: parseQuery(58): unpacking header: id: insufficient data for base length type
+dns: resolver: parseQuery(58): unpacking header: id: insufficient data for base length type
+dns: resolver: parseQuery(58): unpacking header: id: insufficient data for base length type
 ```
