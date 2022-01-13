@@ -13,8 +13,6 @@
 Assuming you're now in a Gitpod workspace:
 
 1. Run `sudo tailscale up`.
-2. `tailscale status` to see network clients
-3. netcat
 
 ## Testing
 
