@@ -88,6 +88,11 @@ PING 100.100.100.100 (100.100.100.100) 56(84) bytes of data.
 
 gitpod /workspace/tailscale-test $ netcat 100.106.9.63 5432 -v
 Connection to 100.106.9.63 5432 port [tcp/postgresql] succeeded!
+
+# if I use an incorrect address psql just hangs
+gitpod /workspace/tailscale-test $ psql -h 100.106.9.63 -U postgres
+psql: error: FATAL:  no pg_hba.conf entry for host "100.121.148.54", user "postgres", database "postgres", SSL on
+FATAL:  no pg_hba.conf entry for host "100.121.148.54", user "postgres", database "postgres", SSL off
 ```
 
 ## Interesting
