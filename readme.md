@@ -8,7 +8,7 @@
 4. Run `./start-multipass.sh`, and follow the echoed instructions
 ## Connect this Gitpod workspace to tailscale (the client)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/workspace-images)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/kylos101/tailscale-test)
 
 Assuming you're now in a Gitpod workspace:
 
